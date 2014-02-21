@@ -1,0 +1,30 @@
+INCLUDE(FindPkgConfig)
+PKG_CHECK_MODULES(PC_OE2AIP OE2AIP)
+
+FIND_PATH(
+    OE2AIP_INCLUDE_DIRS
+    NAMES OE2AIP/api.h
+    HINTS $ENV{OE2AIP_DIR}/include
+        ${PC_OE2AIP_INCLUDEDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/include
+          /usr/local/include
+          /usr/include
+)
+
+FIND_LIBRARY(
+    OE2AIP_LIBRARIES
+    NAMES gnuradio-OE2AIP
+    HINTS $ENV{OE2AIP_DIR}/lib
+        ${PC_OE2AIP_LIBDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/lib
+          ${CMAKE_INSTALL_PREFIX}/lib64
+          /usr/local/lib
+          /usr/local/lib64
+          /usr/lib
+          /usr/lib64
+)
+
+INCLUDE(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(OE2AIP DEFAULT_MSG OE2AIP_LIBRARIES OE2AIP_INCLUDE_DIRS)
+MARK_AS_ADVANCED(OE2AIP_LIBRARIES OE2AIP_INCLUDE_DIRS)
+
