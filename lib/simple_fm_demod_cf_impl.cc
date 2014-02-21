@@ -39,10 +39,13 @@ namespace gr {
      * The private constructor
      */
     simple_fm_demod_cf_impl::simple_fm_demod_cf_impl(float samp_rate)
-      : gr::block("simple_fm_demod_cf",
+      : gr::sync_block("simple_fm_demod_cf",
               gr::io_signature::make(1, 1, sizeof(gr_complex)),
               gr::io_signature::make(1, 1, sizeof(float)))
-    {}
+    {
+	samp_time = 1.0 / samp_rate;
+	set_history(2);
+    }
 
     /*
      * Our virtual destructor.
@@ -51,19 +54,13 @@ namespace gr {
     {
     }
 
-    void
-    simple_fm_demod_cf_impl::forecast (int noutput_items, gr_vector_int &ninput_items_required)
-    {
-        /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
-    }
-
     int
-    simple_fm_demod_cf_impl::general_work (int noutput_items,
-                       gr_vector_int &ninput_items,
-                       gr_vector_const_void_star &input_items,
-                       gr_vector_void_star &output_items)
+    simple_fm_demod_cf_impl::work(int noutput_items,
+                          gr_vector_const_void_star &input_items,
+                          gr_vector_void_star &output_items)
     {
         const gr_complex *in = (const gr_complex *) input_items[0];
+	in++;	// Set the pointer forward, so in[i-1] gets valid
         float *out = (float *) output_items[0];
 
     	float power;
@@ -77,10 +74,6 @@ namespace gr {
                 else
                         out[i] = 0.0;
         }   
-
-	// Tell runtime system how many input items we consumed on
-        // each input stream.
-        consume_each (noutput_items);
 
         // Tell runtime system how many output items we produced.
         return noutput_items;

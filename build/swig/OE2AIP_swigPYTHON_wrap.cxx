@@ -11136,7 +11136,15 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"simple_fm_demod_cf_sptr_message_ports_out", _wrap_simple_fm_demod_cf_sptr_message_ports_out, METH_VARARGS, (char *)"simple_fm_demod_cf_sptr_message_ports_out(simple_fm_demod_cf_sptr self) -> swig_int_ptr"},
 	 { (char *)"simple_fm_demod_cf_sptr_message_subscribers", (PyCFunction) _wrap_simple_fm_demod_cf_sptr_message_subscribers, METH_VARARGS | METH_KEYWORDS, (char *)"simple_fm_demod_cf_sptr_message_subscribers(simple_fm_demod_cf_sptr self, swig_int_ptr which_port) -> swig_int_ptr"},
 	 { (char *)"simple_fm_demod_cf_sptr_swigregister", simple_fm_demod_cf_sptr_swigregister, METH_VARARGS, NULL},
-	 { (char *)"dstar_depacketizer_make", _wrap_dstar_depacketizer_make, METH_VARARGS, (char *)"dstar_depacketizer_make() -> dstar_depacketizer_sptr"},
+	 { (char *)"dstar_depacketizer_make", _wrap_dstar_depacketizer_make, METH_VARARGS, (char *)"\n"
+		"dstar_depacketizer_make() -> dstar_depacketizer_sptr\n"
+		"\n"
+		"Return a shared_ptr to a new instance of OE2AIP::dstar_depacketizer.\n"
+		"\n"
+		"To avoid accidental use of raw pointers, OE2AIP::dstar_depacketizer's constructor is in a private implementation class. OE2AIP::dstar_depacketizer::make is the public interface for creating new instances.\n"
+		"\n"
+		"Params: (NONE)\n"
+		""},
 	 { (char *)"delete_dstar_depacketizer", _wrap_delete_dstar_depacketizer, METH_VARARGS, (char *)"delete_dstar_depacketizer(dstar_depacketizer self)"},
 	 { (char *)"dstar_depacketizer_swigregister", dstar_depacketizer_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_dstar_depacketizer_sptr", _wrap_new_dstar_depacketizer_sptr, METH_VARARGS, (char *)"\n"
@@ -11145,7 +11153,15 @@ static PyMethodDef SwigMethods[] = {
 		""},
 	 { (char *)"dstar_depacketizer_sptr___deref__", _wrap_dstar_depacketizer_sptr___deref__, METH_VARARGS, (char *)"dstar_depacketizer_sptr___deref__(dstar_depacketizer_sptr self) -> dstar_depacketizer"},
 	 { (char *)"delete_dstar_depacketizer_sptr", _wrap_delete_dstar_depacketizer_sptr, METH_VARARGS, (char *)"delete_dstar_depacketizer_sptr(dstar_depacketizer_sptr self)"},
-	 { (char *)"dstar_depacketizer_sptr_make", _wrap_dstar_depacketizer_sptr_make, METH_VARARGS, (char *)"dstar_depacketizer_sptr_make(dstar_depacketizer_sptr self) -> dstar_depacketizer_sptr"},
+	 { (char *)"dstar_depacketizer_sptr_make", _wrap_dstar_depacketizer_sptr_make, METH_VARARGS, (char *)"\n"
+		"dstar_depacketizer_sptr_make(dstar_depacketizer_sptr self) -> dstar_depacketizer_sptr\n"
+		"\n"
+		"Return a shared_ptr to a new instance of OE2AIP::dstar_depacketizer.\n"
+		"\n"
+		"To avoid accidental use of raw pointers, OE2AIP::dstar_depacketizer's constructor is in a private implementation class. OE2AIP::dstar_depacketizer::make is the public interface for creating new instances.\n"
+		"\n"
+		"Params: (NONE)\n"
+		""},
 	 { (char *)"dstar_depacketizer_sptr_history", _wrap_dstar_depacketizer_sptr_history, METH_VARARGS, (char *)"dstar_depacketizer_sptr_history(dstar_depacketizer_sptr self) -> unsigned int"},
 	 { (char *)"dstar_depacketizer_sptr_declare_sample_delay", _wrap_dstar_depacketizer_sptr_declare_sample_delay, METH_VARARGS, (char *)"\n"
 		"declare_sample_delay(int which, int delay)\n"

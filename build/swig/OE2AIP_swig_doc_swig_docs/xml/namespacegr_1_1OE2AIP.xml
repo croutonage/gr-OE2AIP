@@ -2,11 +2,12 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
   <compounddef id="namespacegr_1_1OE2AIP" kind="namespace">
     <compoundname>gr::OE2AIP</compoundname>
+    <innerclass refid="classgr_1_1OE2AIP_1_1dstar__depacketizer" prot="public">gr::OE2AIP::dstar_depacketizer</innerclass>
     <innerclass refid="classgr_1_1OE2AIP_1_1simple__fm__demod__cf" prot="public">gr::OE2AIP::simple_fm_demod_cf</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/include/OE2AIP/simple_fm_demod_cf.h" line="29" column="1"/>
+    <location file="/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/include/OE2AIP/dstar_depacketizer.h" line="29" column="1"/>
   </compounddef>
 </doxygen>

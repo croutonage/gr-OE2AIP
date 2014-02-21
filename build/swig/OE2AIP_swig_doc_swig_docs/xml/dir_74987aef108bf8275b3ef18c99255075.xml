@@ -3,6 +3,7 @@
   <compounddef id="dir_74987aef108bf8275b3ef18c99255075" kind="dir">
     <compoundname>/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/include/OE2AIP</compoundname>
     <innerfile refid="api_8h">api.h</innerfile>
+    <innerfile refid="dstar__depacketizer_8h">dstar_depacketizer.h</innerfile>
     <innerfile refid="simple__fm__demod__cf_8h">simple_fm_demod_cf.h</innerfile>
     <briefdescription>
     </briefdescription>

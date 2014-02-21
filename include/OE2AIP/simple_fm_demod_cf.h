@@ -23,7 +23,7 @@
 #define INCLUDED_OE2AIP_SIMPLE_FM_DEMOD_CF_H
 
 #include <OE2AIP/api.h>
-#include <gnuradio/block.h>
+#include <gnuradio/sync_block.h>
 
 namespace gr {
   namespace OE2AIP {
@@ -33,7 +33,7 @@ namespace gr {
      * \ingroup OE2AIP
      *
      */
-    class OE2AIP_API simple_fm_demod_cf : virtual public gr::block
+    class OE2AIP_API simple_fm_demod_cf : virtual public gr::sync_block
     {
      public:
       typedef boost::shared_ptr<simple_fm_demod_cf> sptr;

@@ -19,7 +19,7 @@ gnuradio/block.h
 ../include/OE2AIP/simple_fm_demod_cf.h
 OE2AIP/api.h
 -
-gnuradio/block.h
+gnuradio/sync_block.h
 -
 
 /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig/OE2AIP_swigPYTHON_wrap.cxx

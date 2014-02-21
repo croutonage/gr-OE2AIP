@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.4">
+  <compound refid="classgr_1_1OE2AIP_1_1dstar__depacketizer" kind="class"><name>gr::OE2AIP::dstar_depacketizer</name>
+    <member refid="classgr_1_1OE2AIP_1_1dstar__depacketizer_1a8b996dee31cf7770c3226dc861b4d6f5" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1OE2AIP_1_1dstar__depacketizer_1ab0c88d6d1e7173e39df985b4c777a259" kind="function"><name>make</name></member>
+  </compound>
   <compound refid="classgr_1_1OE2AIP_1_1simple__fm__demod__cf" kind="class"><name>gr::OE2AIP::simple_fm_demod_cf</name>
     <member refid="classgr_1_1OE2AIP_1_1simple__fm__demod__cf_1a71532891b34648597117279071371c91" kind="typedef"><name>sptr</name></member>
     <member refid="classgr_1_1OE2AIP_1_1simple__fm__demod__cf_1a5a8fa3e060d16d394d9fd15ad10f767e" kind="function"><name>make</name></member>
@@ -12,6 +16,8 @@
   </compound>
   <compound refid="api_8h" kind="file"><name>api.h</name>
     <member refid="api_8h_1aec44809a8f10123114bf618a8cd41c8a" kind="define"><name>OE2AIP_API</name></member>
+  </compound>
+  <compound refid="dstar__depacketizer_8h" kind="file"><name>dstar_depacketizer.h</name>
   </compound>
   <compound refid="simple__fm__demod__cf_8h" kind="file"><name>simple_fm_demod_cf.h</name>
   </compound>

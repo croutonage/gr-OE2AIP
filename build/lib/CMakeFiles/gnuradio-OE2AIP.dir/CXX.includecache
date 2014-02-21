@@ -10,22 +10,22 @@
 gnuradio/attributes.h
 -
 
-../include/OE2AIP/dstar_depacketizer.h
+../include/OE2AIP/simple_fm_demod_cf.h
 OE2AIP/api.h
 -
-gnuradio/block.h
+gnuradio/sync_block.h
 -
 
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/dstar_depacketizer_impl.cc
+/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/simple_fm_demod_cf_impl.cc
 config.h
 /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/config.h
 gnuradio/io_signature.h
 -
-dstar_depacketizer_impl.h
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/dstar_depacketizer_impl.h
+simple_fm_demod_cf_impl.h
+/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/simple_fm_demod_cf_impl.h
 
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/dstar_depacketizer_impl.h
-OE2AIP/dstar_depacketizer.h
+/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/simple_fm_demod_cf_impl.h
+OE2AIP/simple_fm_demod_cf.h
 -
 
 /usr/local/include/gnuradio/api.h
@@ -232,6 +232,12 @@ gnuradio/types.h
 gnuradio/api.h
 -
 boost/shared_ptr.hpp
+-
+
+/usr/local/include/gnuradio/sync_block.h
+gnuradio/api.h
+-
+gnuradio/block.h
 -
 
 /usr/local/include/gnuradio/tags.h

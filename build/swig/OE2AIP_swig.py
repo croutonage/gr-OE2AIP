@@ -400,12 +400,20 @@ simple_fm_demod_cf_sptr.__repr__ = lambda self: "<gr_block %s (%d)>" % (self.nam
 simple_fm_demod_cf = simple_fm_demod_cf.make;
 
 class dstar_depacketizer(object):
-    """Proxy of C++ gr::OE2AIP::dstar_depacketizer class"""
+    """<+description of block+>"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
     def make():
-        """make() -> dstar_depacketizer_sptr"""
+        """
+        make() -> dstar_depacketizer_sptr
+
+        Return a shared_ptr to a new instance of OE2AIP::dstar_depacketizer.
+
+        To avoid accidental use of raw pointers, OE2AIP::dstar_depacketizer's constructor is in a private implementation class. OE2AIP::dstar_depacketizer::make is the public interface for creating new instances.
+
+        Params: (NONE)
+        """
         return _OE2AIP_swig.dstar_depacketizer_make()
 
     make = staticmethod(make)
@@ -415,7 +423,15 @@ dstar_depacketizer_swigregister = _OE2AIP_swig.dstar_depacketizer_swigregister
 dstar_depacketizer_swigregister(dstar_depacketizer)
 
 def dstar_depacketizer_make():
-  """dstar_depacketizer_make() -> dstar_depacketizer_sptr"""
+  """
+    dstar_depacketizer_make() -> dstar_depacketizer_sptr
+
+    Return a shared_ptr to a new instance of OE2AIP::dstar_depacketizer.
+
+    To avoid accidental use of raw pointers, OE2AIP::dstar_depacketizer's constructor is in a private implementation class. OE2AIP::dstar_depacketizer::make is the public interface for creating new instances.
+
+    Params: (NONE)
+    """
   return _OE2AIP_swig.dstar_depacketizer_make()
 
 class dstar_depacketizer_sptr(object):
@@ -437,7 +453,15 @@ class dstar_depacketizer_sptr(object):
     __swig_destroy__ = _OE2AIP_swig.delete_dstar_depacketizer_sptr
     __del__ = lambda self : None;
     def make(self):
-        """make(dstar_depacketizer_sptr self) -> dstar_depacketizer_sptr"""
+        """
+        make(dstar_depacketizer_sptr self) -> dstar_depacketizer_sptr
+
+        Return a shared_ptr to a new instance of OE2AIP::dstar_depacketizer.
+
+        To avoid accidental use of raw pointers, OE2AIP::dstar_depacketizer's constructor is in a private implementation class. OE2AIP::dstar_depacketizer::make is the public interface for creating new instances.
+
+        Params: (NONE)
+        """
         return _OE2AIP_swig.dstar_depacketizer_sptr_make(self)
 
     def history(self):
