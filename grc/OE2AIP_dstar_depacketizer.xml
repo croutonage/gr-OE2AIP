@@ -1,0 +1,17 @@
+<block>
+  <name>Dstar depacketizer</name>
+  <key>OE2AIP_dstar_depacketizer</key>
+  <category>OE2AIP</category>
+  <import>import OE2AIP</import>
+  <make>OE2AIP.dstar_depacketizer()</make>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+    <nports>2</nports>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+    <nports>3</nports>
+  </source>
+</block>

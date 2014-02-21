@@ -1,0 +1,20 @@
+<block>
+  <name>Simple fm demod cf</name>
+  <key>OE2AIP_simple_fm_demod_cf</key>
+  <category>OE2AIP</category>
+  <import>import OE2AIP</import>
+  <make>OE2AIP.simple_fm_demod_cf($samp_rate)</make>
+  <param>
+    <name>Samp_rate</name>
+    <key>samp_rate</key>
+    <type>float</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>
