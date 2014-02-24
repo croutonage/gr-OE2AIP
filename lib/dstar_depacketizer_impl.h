@@ -29,6 +29,8 @@ namespace gr {
     class dstar_depacketizer_impl : public dstar_depacketizer
     {
      private:
+      unsigned int bitbuffer;
+
       bool frame_sync_detected;
       char raw_header[660];
       int header_counter;

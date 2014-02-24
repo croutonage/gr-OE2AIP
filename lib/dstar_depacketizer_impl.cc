@@ -42,9 +42,10 @@ namespace gr {
      */
     dstar_depacketizer_impl::dstar_depacketizer_impl()
       : gr::block("dstar_depacketizer",
-              gr::io_signature::make(2, 2, sizeof(char)),
+              gr::io_signature::make(1, 1, sizeof(char)),
               gr::io_signature::make(3, 3, sizeof(char)))
     {
+	bitbuffer = 0;
     	frame_sync_detected = false;
 	header_counter = 0;
 	
@@ -74,8 +75,7 @@ namespace gr {
                        gr_vector_const_void_star &input_items,
                        gr_vector_void_star &output_items)
     {
-        const char *in0 = (const char *) input_items[0];
-	const char *in1 = (const char *) input_items[1];
+        const char *in = (const char *) input_items[0];
         char *out0 = (char *) output_items[0];
 	char *out1 = (char *) output_items[1];
  	char *out2 = (char *) output_items[2];
@@ -84,6 +84,50 @@ namespace gr {
 
 	for (size_t i = 0; i < noutput_items; i++) {
 		 
+
+		bitbuffer <<= 1;
+		if (in[i] == 0x01){
+			bitbuffer |= 0x01;
+		}
+
+/*
+		// sync detector
+		if ((bitbuffer & 0x00FFFFFF) == 0x00AAB468){
+			cout << "sync detected";
+		}
+*/
+		// frame sync detector
+		if ((bitbuffer & 0xAAAAFFFF) == 0xAAAABB28){
+//			cout << "frame sync detected: 0x" << hex << bitbuffer << " ";
+			out0[i] = 0x02;
+			header_counter = 0;	
+			frame_sync_detected = true;	
+		}
+		else
+		{
+			if ( frame_sync_detected )
+			{
+				out0[i] = in[i];
+				header_counter++;
+			}
+			else
+			{
+				header_counter = 0;
+				out0[i] = 0x00;
+			}
+				
+		}
+		if ( header_counter > 660 )
+			frame_sync_detected = false;
+
+/*
+		// termination flag detector
+		if ((bitbuffer & 0xFFFFFFFF) == 0xAAAA135E){
+			cout << "termination flag detected";
+		}
+
+*/
+/*
 		if ( (header_counter < 660) && frame_sync_detected ){
 			raw_header[header_counter] = in0[i];
 			header_counter++;
@@ -140,7 +184,6 @@ namespace gr {
 
 	 	 
 
-		/*
 
   		 if ( (voice_and_data_counter < 72) && sync_detected )
 		 {
@@ -172,11 +215,12 @@ namespace gr {
                          cout << endl;
                  }
 		*/
+
 	}
         // Do <+signal processing+>
         // Tell runtime system how many input items we consumed on
         // each input stream.
-        //consume_each (noutput_items);
+        consume_each(noutput_items);
 	//consume(0, 1);
 	//consume(1, 1);
 
