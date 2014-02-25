@@ -42,6 +42,7 @@ namespace gr {
       bool sync_detected;
       char raw_voice_and_data[72 + 24];
       int voice_and_data_counter;
+      int voice_frame_counter;
 
      public:
       dstar_depacketizer_impl();

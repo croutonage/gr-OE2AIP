@@ -52,8 +52,9 @@ namespace gr {
 	first_voice_started = false;
 	first_voice_counter = 0;
 
-	sync_detected = true;
+	sync_detected = false;
 	voice_and_data_counter = 0;
+	voice_frame_counter = 0;
     }
 
     /*
@@ -66,7 +67,7 @@ namespace gr {
     void
     dstar_depacketizer_impl::forecast (int noutput_items, gr_vector_int &ninput_items_required)
     {
-        /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
+	ninput_items_required[0] = noutput_items;
     }
 
     int
@@ -81,151 +82,136 @@ namespace gr {
  	char *out2 = (char *) output_items[2];
 
 
+	int output_items_created = 0;
 
 	for (size_t i = 0; i < noutput_items; i++) {
 		 
 
+
+		// shiftregister for the binary datastream
 		bitbuffer <<= 1;
 		if (in[i] == 0x01){
 			bitbuffer |= 0x01;
 		}
 
-/*
 		// sync detector
 		if ((bitbuffer & 0x00FFFFFF) == 0x00AAB468){
-			cout << "sync detected";
+			cout << "<sync>";
+			sync_detected = true;
+			voice_and_data_counter = 0;
+			voice_frame_counter = 0;
 		}
-*/
+
 		// frame sync detector
-		if ((bitbuffer & 0xAAAAFFFF) == 0xAAAABB28){
-//			cout << "frame sync detected: 0x" << hex << bitbuffer << " ";
-			out0[i] = 0x02;
+		if ((bitbuffer & 0xFFFFFFFF) == 0xAAAABB28){
+			cout << "<frame_sync>";
 			header_counter = 0;	
-			frame_sync_detected = true;	
+			frame_sync_detected = true;
+			first_voice_counter = 0;	
 		}
 		else
 		{
+			// after the frame sync is received start the header output
 			if ( frame_sync_detected )
 			{
+				// pass through the header data to the first output
 				out0[i] = in[i];
+				output_items_created++;
 				header_counter++;
 			}
-			else
-			{
-				header_counter = 0;
-				out0[i] = 0x00;
-			}
-				
 		}
-		if ( header_counter > 660 )
+
+		// header is received
+		if ( header_counter == 660 )
+		{
+			header_counter = 0;
 			frame_sync_detected = false;
-
-/*
-		// termination flag detector
-		if ((bitbuffer & 0xFFFFFFFF) == 0xAAAA135E){
-			cout << "termination flag detected";
+			cout << "<header>";
+			
+			// after the header is received, there follows one voice frame
+			first_voice_started = true;
+			first_voice_counter = 0;
 		}
 
-*/
-/*
-		if ( (header_counter < 660) && frame_sync_detected ){
-			raw_header[header_counter] = in0[i];
-			header_counter++;
-			consume(0, 1);
-		 }
 
-
-		if ( (first_voice_counter < 72 ) && first_voice_started){
-		   	first_voice[first_voice_counter] = in0[i];
+		// outputting the first voice to out1
+		if ( first_voice_started && first_voice_counter < 72 )
+		{
+			// pass through the voice output to the second output
+			out1[i] = in[i];
+			output_items_created++;
 			first_voice_counter++;
-			consume(0, 1);
 		}
-
+		
+		// first voice is ready
 		if ( first_voice_counter == 72 )
 		{
+			cout << "<first voice>";
 			first_voice_started = false;
 			first_voice_counter = 0;
-		
-			cout << "First voice:" << endl;
-                        	for (int x = 0; x < 72; x++ )
-                                 	cout << hex << (int)first_voice[x] << ", ";
-                         	cout << endl;
-
 		}
 
 
+		// shifting out the voice and data to out 1 and out 2
+		if ( sync_detected && voice_and_data_counter < 96 )
+		{
+			// the first 72 bits are voice bits
+			if ( voice_and_data_counter < 72 )
+			{
+				out1[i] = in[i];
+			}
+			if ( voice_and_data_counter == 72 )
+			{
+				voice_frame_counter++;
+				cout << "<voice>";
+			}
+			// the 24 bits after the voice bits are data bits
+			if ( voice_and_data_counter > 71 && voice_frame_counter < 21)
+			{
+				out2[i] = in[i];
+			}
+			if ( voice_and_data_counter == 95 )
+				cout << "<data>";
 
-		 // 0x02 from Correlate Access Code Module signals the start of the data
-                 // The first byte with 0x02 contains no useable data
-                 if ( (in0[i] & 0x02) == 0x02)
-                 {
-                         header_counter = 0;
-                         frame_sync_detected = true;
-			 cout << "Header started" << endl;
-			 consume(0, 1);
-                 }
+			voice_and_data_counter++;
+			output_items_created++;
+		}
 
-                 if ( header_counter == 660)
-                 {
-                         frame_sync_detected = false;
-                         header_counter = 0;
-			 
-                         //cout << "Outputitems: " << (int)noutput_items << endl;
+		// voice and data are 96 bit together
+		if ( voice_and_data_counter == 96 )
+		{
+			voice_and_data_counter = 0;
+		}
 
-                         cout << "Raw Header:" << endl;
-                         for (int x = 0; x < 660; x++ )
-                                 cout << hex << (int)raw_header[x] << ", ";
-                         cout << endl;
+		// there are only 21 voice frames until the next sync word	
+		if ( voice_frame_counter > 20 )
+		{
+			sync_detected = false;
+			voice_frame_counter = 0;
+		}
 
-			 // 72 bit after the header are voice bits
-			 first_voice_started = true;
-			 first_voice_counter = 0;
-                 }
+		// termination flag detector
+		if ((bitbuffer & 0xFFFFFFFF) == 0xAAAA135E){
+			cout << "<termination>" << endl;
 
-	 	 
+        		frame_sync_detected = false;
+        		header_counter = 0;
 
+        		first_voice_started = false;
+        		first_voice_counter = 0;
 
-  		 if ( (voice_and_data_counter < 72) && sync_detected )
-		 {
-                         raw_voice_and_data[voice_and_data_counter] = in1[i];
-                         voice_and_data_counter++;
-                         consume(1, 1);
-                 }
+        		sync_detected = false;
+        		voice_and_data_counter = 0;
+        		voice_frame_counter = 0;
+		}
 
-		 // 0x02 from Correlate Access Code Module signals the start of the data
-                 // The first byte with 0x02 contains no useable data
-                 if ( (in1[i] & 0x02) == 0x02)
-                 {
-                         voice_and_data_counter = 0;
-                         sync_detected = true;
-                         cout << "Sync detected" << endl;
-			 consume(1, 1);
-                 }
-
-                 if ( voice_and_data_counter == 72 )
-                 {
-                         sync_detected = false;
-                         voice_and_data_counter = 0;
-
-                         //cout << "Outputitems: " << (int)noutput_items << endl;
-
-                         cout << "Raw voice:" << endl;
-                         for (int x = 0; x < 72; x++ )
-                                 cout << hex << (int)raw_voice_and_data[x] << ", ";
-                         cout << endl;
-                 }
-		*/
-
+		// tell the scheduler that we have consumed 1 sample
+		consume_each(1);
 	}
-        // Do <+signal processing+>
-        // Tell runtime system how many input items we consumed on
-        // each input stream.
-        consume_each(noutput_items);
-	//consume(0, 1);
-	//consume(1, 1);
 
         // Tell runtime system how many output items we produced.
-        return noutput_items;
+	//        return noutput_items;
+	return output_items_created;
     }
 
   } /* namespace OE2AIP */
