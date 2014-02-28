@@ -41,3 +41,4 @@ include(GrTest)
 
 set(GR_TEST_TARGET_DEPS gnuradio-OE2AIP)
 set(GR_TEST_PYTHON_DIRS ${CMAKE_BINARY_DIR}/swig)
+GR_ADD_TEST(qa_uart_decoder_from_sync ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_uart_decoder_from_sync.py)

@@ -201,6 +201,30 @@ dstar_depacketizer_impl.cc.s:
 	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build && $(MAKE) -f lib/CMakeFiles/gnuradio-OE2AIP.dir/build.make lib/CMakeFiles/gnuradio-OE2AIP.dir/dstar_depacketizer_impl.cc.s
 .PHONY : dstar_depacketizer_impl.cc.s
 
+dstar_header_decoder.o: dstar_header_decoder.cc.o
+.PHONY : dstar_header_decoder.o
+
+# target to build an object file
+dstar_header_decoder.cc.o:
+	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build && $(MAKE) -f lib/CMakeFiles/gnuradio-OE2AIP.dir/build.make lib/CMakeFiles/gnuradio-OE2AIP.dir/dstar_header_decoder.cc.o
+.PHONY : dstar_header_decoder.cc.o
+
+dstar_header_decoder.i: dstar_header_decoder.cc.i
+.PHONY : dstar_header_decoder.i
+
+# target to preprocess a source file
+dstar_header_decoder.cc.i:
+	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build && $(MAKE) -f lib/CMakeFiles/gnuradio-OE2AIP.dir/build.make lib/CMakeFiles/gnuradio-OE2AIP.dir/dstar_header_decoder.cc.i
+.PHONY : dstar_header_decoder.cc.i
+
+dstar_header_decoder.s: dstar_header_decoder.cc.s
+.PHONY : dstar_header_decoder.s
+
+# target to generate assembly for a file
+dstar_header_decoder.cc.s:
+	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build && $(MAKE) -f lib/CMakeFiles/gnuradio-OE2AIP.dir/build.make lib/CMakeFiles/gnuradio-OE2AIP.dir/dstar_header_decoder.cc.s
+.PHONY : dstar_header_decoder.cc.s
+
 qa_OE2AIP.o: qa_OE2AIP.cc.o
 .PHONY : qa_OE2AIP.o
 
@@ -273,6 +297,54 @@ test_OE2AIP.cc.s:
 	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build && $(MAKE) -f lib/CMakeFiles/test-OE2AIP.dir/build.make lib/CMakeFiles/test-OE2AIP.dir/test_OE2AIP.cc.s
 .PHONY : test_OE2AIP.cc.s
 
+uart_decoder_from_sync_impl.o: uart_decoder_from_sync_impl.cc.o
+.PHONY : uart_decoder_from_sync_impl.o
+
+# target to build an object file
+uart_decoder_from_sync_impl.cc.o:
+	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build && $(MAKE) -f lib/CMakeFiles/gnuradio-OE2AIP.dir/build.make lib/CMakeFiles/gnuradio-OE2AIP.dir/uart_decoder_from_sync_impl.cc.o
+.PHONY : uart_decoder_from_sync_impl.cc.o
+
+uart_decoder_from_sync_impl.i: uart_decoder_from_sync_impl.cc.i
+.PHONY : uart_decoder_from_sync_impl.i
+
+# target to preprocess a source file
+uart_decoder_from_sync_impl.cc.i:
+	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build && $(MAKE) -f lib/CMakeFiles/gnuradio-OE2AIP.dir/build.make lib/CMakeFiles/gnuradio-OE2AIP.dir/uart_decoder_from_sync_impl.cc.i
+.PHONY : uart_decoder_from_sync_impl.cc.i
+
+uart_decoder_from_sync_impl.s: uart_decoder_from_sync_impl.cc.s
+.PHONY : uart_decoder_from_sync_impl.s
+
+# target to generate assembly for a file
+uart_decoder_from_sync_impl.cc.s:
+	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build && $(MAKE) -f lib/CMakeFiles/gnuradio-OE2AIP.dir/build.make lib/CMakeFiles/gnuradio-OE2AIP.dir/uart_decoder_from_sync_impl.cc.s
+.PHONY : uart_decoder_from_sync_impl.cc.s
+
+uart_decoder_impl.o: uart_decoder_impl.cc.o
+.PHONY : uart_decoder_impl.o
+
+# target to build an object file
+uart_decoder_impl.cc.o:
+	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build && $(MAKE) -f lib/CMakeFiles/gnuradio-OE2AIP.dir/build.make lib/CMakeFiles/gnuradio-OE2AIP.dir/uart_decoder_impl.cc.o
+.PHONY : uart_decoder_impl.cc.o
+
+uart_decoder_impl.i: uart_decoder_impl.cc.i
+.PHONY : uart_decoder_impl.i
+
+# target to preprocess a source file
+uart_decoder_impl.cc.i:
+	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build && $(MAKE) -f lib/CMakeFiles/gnuradio-OE2AIP.dir/build.make lib/CMakeFiles/gnuradio-OE2AIP.dir/uart_decoder_impl.cc.i
+.PHONY : uart_decoder_impl.cc.i
+
+uart_decoder_impl.s: uart_decoder_impl.cc.s
+.PHONY : uart_decoder_impl.s
+
+# target to generate assembly for a file
+uart_decoder_impl.cc.s:
+	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build && $(MAKE) -f lib/CMakeFiles/gnuradio-OE2AIP.dir/build.make lib/CMakeFiles/gnuradio-OE2AIP.dir/uart_decoder_impl.cc.s
+.PHONY : uart_decoder_impl.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -291,6 +363,9 @@ help:
 	@echo "... dstar_depacketizer_impl.o"
 	@echo "... dstar_depacketizer_impl.i"
 	@echo "... dstar_depacketizer_impl.s"
+	@echo "... dstar_header_decoder.o"
+	@echo "... dstar_header_decoder.i"
+	@echo "... dstar_header_decoder.s"
 	@echo "... qa_OE2AIP.o"
 	@echo "... qa_OE2AIP.i"
 	@echo "... qa_OE2AIP.s"
@@ -300,6 +375,12 @@ help:
 	@echo "... test_OE2AIP.o"
 	@echo "... test_OE2AIP.i"
 	@echo "... test_OE2AIP.s"
+	@echo "... uart_decoder_from_sync_impl.o"
+	@echo "... uart_decoder_from_sync_impl.i"
+	@echo "... uart_decoder_from_sync_impl.s"
+	@echo "... uart_decoder_impl.o"
+	@echo "... uart_decoder_impl.i"
+	@echo "... uart_decoder_impl.s"
 .PHONY : help
 
 

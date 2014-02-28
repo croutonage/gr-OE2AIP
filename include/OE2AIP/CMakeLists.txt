@@ -23,5 +23,8 @@
 install(FILES
     api.h
     simple_fm_demod_cf.h
-    dstar_depacketizer.h DESTINATION include/OE2AIP
+    dstar_depacketizer.h
+    uart_decoder.h
+    uart_decoder.h
+    uart_decoder_from_sync.h DESTINATION include/OE2AIP
 )

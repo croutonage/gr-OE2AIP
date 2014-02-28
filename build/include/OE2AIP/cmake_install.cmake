@@ -37,6 +37,9 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/include/OE2AIP/api.h"
     "/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/include/OE2AIP/simple_fm_demod_cf.h"
     "/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/include/OE2AIP/dstar_depacketizer.h"
+    "/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/include/OE2AIP/uart_decoder.h"
+    "/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/include/OE2AIP/uart_decoder.h"
+    "/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/include/OE2AIP/uart_decoder_from_sync.h"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

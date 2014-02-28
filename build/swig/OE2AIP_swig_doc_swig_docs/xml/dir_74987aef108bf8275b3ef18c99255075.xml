@@ -5,6 +5,8 @@
     <innerfile refid="api_8h">api.h</innerfile>
     <innerfile refid="dstar__depacketizer_8h">dstar_depacketizer.h</innerfile>
     <innerfile refid="simple__fm__demod__cf_8h">simple_fm_demod_cf.h</innerfile>
+    <innerfile refid="uart__decoder_8h">uart_decoder.h</innerfile>
+    <innerfile refid="uart__decoder__from__sync_8h">uart_decoder_from_sync.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

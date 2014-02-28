@@ -18,5 +18,8 @@
 # Boston, MA 02110-1301, USA.
 install(FILES
     OE2AIP_simple_fm_demod_cf.xml
-    OE2AIP_dstar_depacketizer.xml DESTINATION share/gnuradio/grc/blocks
+    OE2AIP_dstar_depacketizer.xml
+    OE2AIP_uart_decoder.xml
+    OE2AIP_uart_decoder.xml
+    OE2AIP_uart_decoder_from_sync.xml DESTINATION share/gnuradio/grc/blocks
 )

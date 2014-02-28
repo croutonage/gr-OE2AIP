@@ -22,6 +22,7 @@
 #define INCLUDED_OE2AIP_DSTAR_DEPACKETIZER_IMPL_H
 
 #include <OE2AIP/dstar_depacketizer.h>
+#include "dstar_header_decoder.h"
 
 namespace gr {
   namespace OE2AIP {
@@ -30,6 +31,7 @@ namespace gr {
     {
      private:
       unsigned int bitbuffer;
+
 
       bool frame_sync_detected;
       char raw_header[660];

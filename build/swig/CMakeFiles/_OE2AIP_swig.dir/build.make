@@ -51,6 +51,7 @@ include swig/CMakeFiles/_OE2AIP_swig.dir/flags.make
 
 swig/OE2AIP_swigPYTHON_wrap.cxx: /usr/local/include/gnuradio/swig/gnuradio.i
 swig/OE2AIP_swigPYTHON_wrap.cxx: /usr/local/include/gnuradio/swig/gr_extras.i
+swig/OE2AIP_swigPYTHON_wrap.cxx: swig/OE2AIP_swig_doc.i
 swig/OE2AIP_swigPYTHON_wrap.cxx: /usr/local/include/gnuradio/swig/gr_shared_ptr.i
 swig/OE2AIP_swigPYTHON_wrap.cxx: /usr/local/include/gnuradio/swig/gnuradio_swig_bug_workaround.h
 swig/OE2AIP_swigPYTHON_wrap.cxx: ../swig/OE2AIP_swig.i
@@ -64,17 +65,17 @@ swig/OE2AIP_swigPYTHON_wrap.cxx: ../swig/OE2AIP_swig.i
 
 swig/OE2AIP_swig.py: swig/OE2AIP_swigPYTHON_wrap.cxx
 
+swig/OE2AIP_swig_doc.i: swig/OE2AIP_swig_doc_swig_docs/xml/index.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating OE2AIP_swig_doc.i"
+	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/docs/doxygen && /usr/bin/python2 -B /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/docs/doxygen/swig_doc.py /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig/OE2AIP_swig_doc_swig_docs/xml /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig/OE2AIP_swig_doc.i
+
 swig/OE2AIP_swig.tag: swig/OE2AIP_swig_doc.i
 swig/OE2AIP_swig.tag: swig/_OE2AIP_swig_swig_tag
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating OE2AIP_swig.tag"
 	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig && ./_OE2AIP_swig_swig_tag
 	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig && /usr/bin/cmake -E touch /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig/OE2AIP_swig.tag
-
-swig/OE2AIP_swig_doc.i: swig/OE2AIP_swig_doc_swig_docs/xml/index.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating OE2AIP_swig_doc.i"
-	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/docs/doxygen && /usr/bin/python2 -B /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/docs/doxygen/swig_doc.py /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig/OE2AIP_swig_doc_swig_docs/xml /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig/OE2AIP_swig_doc.i
 
 swig/OE2AIP_swig_doc_swig_docs/xml/index.xml: swig/_OE2AIP_swig_doc_tag
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/CMakeFiles $(CMAKE_PROGRESS_4)
@@ -136,8 +137,8 @@ swig/CMakeFiles/_OE2AIP_swig.dir/clean:
 
 swig/CMakeFiles/_OE2AIP_swig.dir/depend: swig/OE2AIP_swigPYTHON_wrap.cxx
 swig/CMakeFiles/_OE2AIP_swig.dir/depend: swig/OE2AIP_swig.py
-swig/CMakeFiles/_OE2AIP_swig.dir/depend: swig/OE2AIP_swig.tag
 swig/CMakeFiles/_OE2AIP_swig.dir/depend: swig/OE2AIP_swig_doc.i
+swig/CMakeFiles/_OE2AIP_swig.dir/depend: swig/OE2AIP_swig.tag
 swig/CMakeFiles/_OE2AIP_swig.dir/depend: swig/OE2AIP_swig_doc_swig_docs/xml/index.xml
 	cd /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pa185059/Desktop/Gnuradio/gr-OE2AIP /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/swig /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig/CMakeFiles/_OE2AIP_swig.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : swig/CMakeFiles/_OE2AIP_swig.dir/depend

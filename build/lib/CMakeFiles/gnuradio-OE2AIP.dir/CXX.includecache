@@ -10,22 +10,22 @@
 gnuradio/attributes.h
 -
 
-../include/OE2AIP/dstar_depacketizer.h
+../include/OE2AIP/uart_decoder_from_sync.h
 OE2AIP/api.h
 -
 gnuradio/block.h
 -
 
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/dstar_depacketizer_impl.cc
+/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/uart_decoder_from_sync_impl.cc
 config.h
 /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/config.h
 gnuradio/io_signature.h
 -
-dstar_depacketizer_impl.h
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/dstar_depacketizer_impl.h
+uart_decoder_from_sync_impl.h
+/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/uart_decoder_from_sync_impl.h
 
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/dstar_depacketizer_impl.h
-OE2AIP/dstar_depacketizer.h
+/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/lib/uart_decoder_from_sync_impl.h
+OE2AIP/uart_decoder_from_sync.h
 -
 
 /usr/local/include/gnuradio/api.h

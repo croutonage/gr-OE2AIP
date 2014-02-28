@@ -4,6 +4,8 @@
     <compoundname>gr::OE2AIP</compoundname>
     <innerclass refid="classgr_1_1OE2AIP_1_1dstar__depacketizer" prot="public">gr::OE2AIP::dstar_depacketizer</innerclass>
     <innerclass refid="classgr_1_1OE2AIP_1_1simple__fm__demod__cf" prot="public">gr::OE2AIP::simple_fm_demod_cf</innerclass>
+    <innerclass refid="classgr_1_1OE2AIP_1_1uart__decoder" prot="public">gr::OE2AIP::uart_decoder</innerclass>
+    <innerclass refid="classgr_1_1OE2AIP_1_1uart__decoder__from__sync" prot="public">gr::OE2AIP::uart_decoder_from_sync</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

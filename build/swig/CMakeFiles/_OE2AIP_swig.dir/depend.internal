@@ -5,6 +5,8 @@ swig/CMakeFiles/_OE2AIP_swig.dir/OE2AIP_swigPYTHON_wrap.cxx.o
  ../include/OE2AIP/api.h
  ../include/OE2AIP/dstar_depacketizer.h
  ../include/OE2AIP/simple_fm_demod_cf.h
+ ../include/OE2AIP/uart_decoder.h
+ ../include/OE2AIP/uart_decoder_from_sync.h
  /home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig/OE2AIP_swigPYTHON_wrap.cxx
  /usr/include/python2.7/Python.h
  /usr/include/python2.7/abstract.h

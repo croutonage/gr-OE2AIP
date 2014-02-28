@@ -36,6 +36,9 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gnuradio/grc/blocks" TYPE FILE FILES
     "/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/grc/OE2AIP_simple_fm_demod_cf.xml"
     "/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/grc/OE2AIP_dstar_depacketizer.xml"
+    "/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/grc/OE2AIP_uart_decoder.xml"
+    "/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/grc/OE2AIP_uart_decoder.xml"
+    "/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/grc/OE2AIP_uart_decoder_from_sync.xml"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

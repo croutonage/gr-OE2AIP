@@ -4,6 +4,8 @@
 swig/CMakeFiles/_OE2AIP_swig.dir/OE2AIP_swigPYTHON_wrap.cxx.o: ../include/OE2AIP/api.h
 swig/CMakeFiles/_OE2AIP_swig.dir/OE2AIP_swigPYTHON_wrap.cxx.o: ../include/OE2AIP/dstar_depacketizer.h
 swig/CMakeFiles/_OE2AIP_swig.dir/OE2AIP_swigPYTHON_wrap.cxx.o: ../include/OE2AIP/simple_fm_demod_cf.h
+swig/CMakeFiles/_OE2AIP_swig.dir/OE2AIP_swigPYTHON_wrap.cxx.o: ../include/OE2AIP/uart_decoder.h
+swig/CMakeFiles/_OE2AIP_swig.dir/OE2AIP_swigPYTHON_wrap.cxx.o: ../include/OE2AIP/uart_decoder_from_sync.h
 swig/CMakeFiles/_OE2AIP_swig.dir/OE2AIP_swigPYTHON_wrap.cxx.o: swig/OE2AIP_swigPYTHON_wrap.cxx
 swig/CMakeFiles/_OE2AIP_swig.dir/OE2AIP_swigPYTHON_wrap.cxx.o: /usr/include/python2.7/Python.h
 swig/CMakeFiles/_OE2AIP_swig.dir/OE2AIP_swigPYTHON_wrap.cxx.o: /usr/include/python2.7/abstract.h

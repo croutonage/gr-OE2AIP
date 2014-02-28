@@ -1,6 +1,9 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/gnuradio-OE2AIP.dir/simple_fm_demod_cf_impl.cc.o"
   "CMakeFiles/gnuradio-OE2AIP.dir/dstar_depacketizer_impl.cc.o"
+  "CMakeFiles/gnuradio-OE2AIP.dir/dstar_header_decoder.cc.o"
+  "CMakeFiles/gnuradio-OE2AIP.dir/uart_decoder_impl.cc.o"
+  "CMakeFiles/gnuradio-OE2AIP.dir/uart_decoder_from_sync_impl.cc.o"
   "libgnuradio-OE2AIP.pdb"
   "libgnuradio-OE2AIP.so"
 )

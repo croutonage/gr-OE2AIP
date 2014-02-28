@@ -25,10 +25,14 @@
 #include <gnuradio/io_signature.h>
 #include "dstar_depacketizer_impl.h"
 
+#include "dstar_header_decoder.h"
+
 namespace gr {
   namespace OE2AIP {
 
     using namespace std;
+
+	dstar_header _dstar_header;
 
     dstar_depacketizer::sptr
     dstar_depacketizer::make()
@@ -55,6 +59,8 @@ namespace gr {
 	sync_detected = false;
 	voice_and_data_counter = 0;
 	voice_frame_counter = 0;
+
+	
     }
 
     /*
@@ -84,6 +90,7 @@ namespace gr {
 
 	int output_items_created = 0;
 
+
 	for (size_t i = 0; i < noutput_items; i++) {
 		 
 
@@ -102,32 +109,38 @@ namespace gr {
 			voice_frame_counter = 0;
 		}
 
+
+		// after the frame sync is received start the header output
+        if ( frame_sync_detected && header_counter < 660)
+        {
+            // pass through the header data to the first output
+            out0[i] = in[i];
+            raw_header[header_counter] = in[i];
+            output_items_created++;
+            header_counter++;
+            cout << hex << (int)in[i] << ", ";
+        }
+
+
 		// frame sync detector
 		if ((bitbuffer & 0xFFFFFFFF) == 0xAAAABB28){
-			cout << "<frame_sync>";
+			cout << "<frame_sync>" << endl;
 			header_counter = 0;	
 			frame_sync_detected = true;
-			first_voice_counter = 0;	
-		}
-		else
-		{
-			// after the frame sync is received start the header output
-			if ( frame_sync_detected )
-			{
-				// pass through the header data to the first output
-				out0[i] = in[i];
-				output_items_created++;
-				header_counter++;
-			}
+			first_voice_counter = 0;
 		}
 
 		// header is received
 		if ( header_counter == 660 )
 		{
+			cout << endl;
+			_dstar_header.decode(raw_header);
 			header_counter = 0;
 			frame_sync_detected = false;
+			cout << endl;
 			cout << "<header>";
-			
+	
+	
 			// after the header is received, there follows one voice frame
 			first_voice_started = true;
 			first_voice_counter = 0;

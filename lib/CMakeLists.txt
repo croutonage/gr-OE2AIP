@@ -26,7 +26,10 @@ include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND OE2AIP_sources
     simple_fm_demod_cf_impl.cc
-    dstar_depacketizer_impl.cc )
+    dstar_depacketizer_impl.cc
+	dstar_header_decoder.cc
+    uart_decoder_impl.cc
+    uart_decoder_from_sync_impl.cc )
 
 add_library(gnuradio-OE2AIP SHARED ${OE2AIP_sources})
 target_link_libraries(gnuradio-OE2AIP ${Boost_LIBRARIES} ${GNURADIO_RUNTIME_LIBRARIES})

@@ -6,8 +6,8 @@ FILE(REMOVE_RECURSE
   "OE2AIP_swig.pyo"
   "OE2AIP_swigPYTHON_wrap.cxx"
   "OE2AIP_swig.py"
-  "OE2AIP_swig.tag"
   "OE2AIP_swig_doc.i"
+  "OE2AIP_swig.tag"
   "OE2AIP_swig_doc_swig_docs/xml/index.xml"
 )
 
