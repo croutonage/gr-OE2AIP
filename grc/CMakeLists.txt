@@ -21,5 +21,7 @@ install(FILES
     OE2AIP_dstar_depacketizer.xml
     OE2AIP_uart_decoder.xml
     OE2AIP_uart_decoder.xml
-    OE2AIP_uart_decoder_from_sync.xml DESTINATION share/gnuradio/grc/blocks
+    OE2AIP_uart_decoder_from_sync.xml
+    OE2AIP_dstar_header_decoder.xml
+    OE2AIP_dstar_dd_mode.xml DESTINATION share/gnuradio/grc/blocks
 )

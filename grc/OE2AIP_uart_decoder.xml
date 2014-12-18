@@ -1,0 +1,15 @@
+<block>
+  <name>Uart decoder</name>
+  <key>OE2AIP_uart_decoder</key>
+  <category>OE2AIP</category>
+  <import>import OE2AIP</import>
+  <make>OE2AIP.uart_decoder()</make>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

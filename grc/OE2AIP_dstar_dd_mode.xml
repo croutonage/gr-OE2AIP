@@ -1,9 +1,9 @@
 <block>
-  <name>Dstar depacketizer</name>
-  <key>OE2AIP_dstar_depacketizer</key>
+  <name>Dstar dd mode</name>
+  <key>OE2AIP_dstar_dd_mode</key>
   <category>OE2AIP</category>
   <import>import OE2AIP</import>
-  <make>OE2AIP.dstar_depacketizer()</make>
+  <make>OE2AIP.dstar_dd_mode()</make>
   <sink>
     <name>in</name>
     <type>byte</type>

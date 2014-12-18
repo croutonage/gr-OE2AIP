@@ -33,18 +33,36 @@ namespace gr {
       unsigned int bitbuffer;
 
 
-      bool frame_sync_detected;
-      char raw_header[660];
-      int header_counter;
+	typedef enum {
+		RX_DSTAR_OUT_OF_SYNC,
+		RX_DSTAR_SEARCH_FOR_SYNCFLAG,
+		RX_DSTAR_HEADER,
+		RX_DSTAR_VOICE,
+		RX_DSTAR_VOICE_AFTER_HEADER,
+		RX_DSTAR_DATA,
+		RX_DSTAR_TERMINATION
+	} rx_dstar_state_t;
 
-      bool first_voice_started;
-      char first_voice[72];
-      int first_voice_counter;
+      rx_dstar_state_t state;
+      
+      header_t header;
+
+      unsigned char raw_header[660];
+      unsigned char raw_slowspeed_data[480];
+      unsigned char raw_voice[72];
+      unsigned char raw_data[24];
+      
+      unsigned char dstar_sd_header[41];
+      
+      
+      int header_counter;
+      int voice_counter;
+      int data_counter;
+      int data_frame_counter;
 
       bool sync_detected;
       char raw_voice_and_data[72 + 24];
       int voice_and_data_counter;
-      int voice_frame_counter;
 
      public:
       dstar_depacketizer_impl();
@@ -52,6 +70,11 @@ namespace gr {
 
       // Where all the action really happens
       void forecast (int noutput_items, gr_vector_int &ninput_items_required);
+	  void send_message(long msgtype, std::string msgtext);
+	  void processSlowData(uint16_t number, const uint8_t* data);
+	  void validateLocation();
+
+	  unsigned short rx_dstar_crc_header(const unsigned char* header);
 
       int general_work(int noutput_items,
 		       gr_vector_int &ninput_items,

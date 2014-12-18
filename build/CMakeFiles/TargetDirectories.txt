@@ -1,9 +1,0 @@
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig/CMakeFiles/_OE2AIP_swig.dir
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig/CMakeFiles/_OE2AIP_swig_doc_tag.dir
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig/CMakeFiles/_OE2AIP_swig_swig_tag.dir
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/lib/CMakeFiles/gnuradio-OE2AIP.dir
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/apps/CMakeFiles/pygen_apps_9a6dd.dir
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/python/CMakeFiles/pygen_python_2d72f.dir
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/swig/CMakeFiles/pygen_swig_94b54.dir
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/lib/CMakeFiles/test-OE2AIP.dir
-/home/pa185059/Desktop/Gnuradio/gr-OE2AIP/build/CMakeFiles/uninstall.dir

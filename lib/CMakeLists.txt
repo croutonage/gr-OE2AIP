@@ -29,7 +29,9 @@ list(APPEND OE2AIP_sources
     dstar_depacketizer_impl.cc
 	dstar_header_decoder.cc
     uart_decoder_impl.cc
-    uart_decoder_from_sync_impl.cc )
+    uart_decoder_from_sync_impl.cc
+    dstar_header_decoder_impl.cc
+    dstar_dd_mode_impl.cc )
 
 add_library(gnuradio-OE2AIP SHARED ${OE2AIP_sources})
 target_link_libraries(gnuradio-OE2AIP ${Boost_LIBRARIES} ${GNURADIO_RUNTIME_LIBRARIES})

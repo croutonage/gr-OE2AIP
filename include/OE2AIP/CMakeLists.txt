@@ -26,5 +26,7 @@ install(FILES
     dstar_depacketizer.h
     uart_decoder.h
     uart_decoder.h
-    uart_decoder_from_sync.h DESTINATION include/OE2AIP
+    uart_decoder_from_sync.h
+    dstar_header_decoder.h
+    dstar_dd_mode.h DESTINATION include/OE2AIP
 )
